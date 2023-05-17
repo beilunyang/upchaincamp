@@ -79,7 +79,7 @@ contract ToumaToken is IERC20, IERC20Metadata {
         address to,
         uint amount
     ) external override returns (bool) {
-        require(_allowance[from][msg.sender] >= amount, "Insufficient balance");
+        require(_allowance[from][msg.sender] >= amount, "Insufficient allowance balance");
         require(_balances[from] >= amount, "Insufficient balance");
         _allowance[from][msg.sender] -= amount;
         _balances[from] -= amount;
